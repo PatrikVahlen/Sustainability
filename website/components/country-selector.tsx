@@ -19,7 +19,7 @@ export default function CountrySelector({ value, onChange }: ICountrySelector) {
   };
 
   console.log('value', value)
-  //TEST
+  //TEST123
 
   return (
     <select name="country-selector" onChange={_onChange} value={value.value}>
