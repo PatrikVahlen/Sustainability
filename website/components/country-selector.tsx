@@ -1,3 +1,4 @@
+import Intensity from "@/pages/intensity";
 import {
   findByCountry,
   IIntensity,
@@ -9,25 +10,37 @@ export interface ICountrySelector {
   onChange: (value: IIntensity) => void;
 }
 
-
-
 export default function CountrySelector({ value, onChange }: ICountrySelector) {
   const _onChange = (event: any) => {
     const value = event.target.value;
     const intensity = findByCountry(value);
+           
     if (intensity) onChange(intensity);
   };
 
-  console.log('value', value)
-  //TEST123
 
   return (
-    <select name="country-selector" onChange={_onChange} value={value.value}>
+    <select name="country-selector" onChange={_onChange} value={value.country}>
       {INTENSITY_DATA_2021.map((intensity) => (
-        <option key={intensity.country} value={intensity.country}>
+        <option key={intensity.value} value={intensity.country}>
           {intensity.country} - {intensity.value}
         </option>
       ))}
     </select>
   );
+  // return (
+  //   <select name="country-selector" onChange={_onChange} value={value.value}>
+      
+  //       <option key={1} value={'Sweden'}>
+  //         Sweden - 1
+  //       </option>
+  //       <option key={2} value={"Finland"}>
+  //         Finland - 2
+  //       </option>
+  //       <option key={3} value={"Germany"}>
+  //         Germany - 3
+  //       </option>
+      
+  //   </select>
+  // );
 }
