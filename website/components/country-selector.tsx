@@ -9,12 +9,17 @@ export interface ICountrySelector {
   onChange: (value: IIntensity) => void;
 }
 
+
+
 export default function CountrySelector({ value, onChange }: ICountrySelector) {
   const _onChange = (event: any) => {
     const value = event.target.value;
     const intensity = findByCountry(value);
     if (intensity) onChange(intensity);
   };
+
+  console.log('value', value)
+  //TEST
 
   return (
     <select name="country-selector" onChange={_onChange} value={value.value}>
