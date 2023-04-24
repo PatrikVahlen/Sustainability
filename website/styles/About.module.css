@@ -1,0 +1,9 @@
+.grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "a a a"
+      "b b c"
+      "d d d";
+  }
